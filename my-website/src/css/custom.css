@@ -1,0 +1,95 @@
+:root {
+  --ifm-color-primary: #2b6cb0;
+  --ifm-color-primary-dark: #27619e;
+  --ifm-color-primary-darker: #255b95;
+  --ifm-color-primary-darkest: #1e4b7a;
+  --ifm-color-primary-light: #2f77c2;
+  --ifm-color-primary-lighter: #317dcb;
+  --ifm-color-primary-lightest: #4a8fd5;
+  --ifm-code-font-size: 95%;
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-weight: 600;
+  --ifm-global-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --ifm-container-width: 1200px;
+}
+
+/* Acessibilidade: Foco visível */
+:focus-visible {
+  outline: 3px solid var(--ifm-color-primary);
+  outline-offset: 3px;
+}
+
+/* Melhorias de tipografia */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--ifm-font-family-base);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--ifm-heading-font-weight);
+  margin-bottom: 1rem;
+}
+
+/* Componentes personalizados */
+.alert--accessible {
+  border-left-width: 4px;
+}
+
+.api-endpoint {
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: var(--ifm-global-radius);
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.api-endpoint__method {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-family: monospace;
+  margin-right: 0.5rem;
+}
+
+.get { background-color: #61affe; color: white; }
+.post { background-color: #49cc90; color: white; }
+.put { background-color: #fca130; color: white; }
+.delete { background-color: #f93e3e; color: white; }
+
+/* Tabelas acessíveis */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+th, td {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  padding: 0.75rem;
+  text-align: left;
+}
+
+th {
+  background-color: var(--ifm-color-emphasis-100);
+  font-weight: bold;
+}
+
+/* Dark mode */
+[data-theme='dark'] {
+  --ifm-color-primary: #4dabf7;
+  --ifm-color-primary-dark: #2f9bf6;
+  --ifm-color-primary-darker: #1f93f5;
+  --ifm-color-primary-darkest: #0979d9;
+  --ifm-color-primary-light: #6bbbf8;
+  --ifm-color-primary-lighter: #7bc3f9;
+  --ifm-color-primary-lightest: #a9dafb;
+}
+
+[data-theme='dark'] table {
+  border-color: var(--ifm-color-emphasis-200);
+}

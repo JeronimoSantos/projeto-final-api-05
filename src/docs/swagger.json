@@ -1,0 +1,478 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Mercado Inclusivo",
+    "version": "1.0.0",
+    "description": "API para inclusão de PCDs no mercado de trabalho"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Local server"
+    }
+  ],
+  "paths": {
+    "/usuarios": {
+      "get": {
+        "summary": "Lista todos os usuários",
+        "responses": {
+          "200": {
+            "description": "Lista de usuários",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Usuario" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Cria um novo usuário",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Usuario" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Usuário criado",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Usuario" }
+              }
+            }
+          },
+          "400": { "description": "Erro na requisição" }
+        }
+      }
+    },
+    "/usuarios/{id}": {
+      "get": {
+        "summary": "Busca usuário por ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuário encontrado",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Usuario" }
+              }
+            }
+          },
+          "404": { "description": "Usuário não encontrado" }
+        }
+      },
+      "put": {
+        "summary": "Atualiza usuário",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Usuario" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Usuário atualizado" },
+          "400": { "description": "Erro na requisição" }
+        }
+      },
+      "delete": {
+        "summary": "Remove usuário",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "204": { "description": "Usuário removido" },
+          "404": { "description": "Usuário não encontrado" }
+        }
+      }
+    },
+    "/candidaturas": {
+      "get": {
+        "summary": "Lista todas as candidaturas",
+        "responses": {
+          "200": {
+            "description": "Lista de candidaturas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Candidatura" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Cria uma nova candidatura",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Candidatura" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Candidatura criada",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Candidatura" }
+              }
+            }
+          },
+          "400": { "description": "Erro na requisição" }
+        }
+      }
+    },
+    "/candidaturas/{id}": {
+      "get": {
+        "summary": "Busca candidatura por ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Candidatura encontrada",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Candidatura" }
+              }
+            }
+          },
+          "404": { "description": "Candidatura não encontrada" }
+        }
+      },
+      "put": {
+        "summary": "Atualiza candidatura",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Candidatura" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Candidatura atualizada" },
+          "400": { "description": "Erro na requisição" }
+        }
+      },
+      "delete": {
+        "summary": "Remove candidatura",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "204": { "description": "Candidatura removida" },
+          "404": { "description": "Candidatura não encontrada" }
+        }
+      }
+    },
+    "/vagas": {
+      "get": {
+        "summary": "Lista todas as vagas",
+        "responses": {
+          "200": {
+            "description": "Lista de vagas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Vaga" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Cria uma nova vaga",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Vaga" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Vaga criada",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Vaga" }
+              }
+            }
+          },
+          "400": { "description": "Erro na requisição" }
+        }
+      }
+    },
+    "/vagas/{id}": {
+      "get": {
+        "summary": "Busca vaga por ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Vaga encontrada",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Vaga" }
+              }
+            }
+          },
+          "404": { "description": "Vaga não encontrada" }
+        }
+      },
+      "put": {
+        "summary": "Atualiza vaga",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Vaga" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Vaga atualizada" },
+          "400": { "description": "Erro na requisição" }
+        }
+      },
+      "delete": {
+        "summary": "Remove vaga",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "204": { "description": "Vaga removida" },
+          "404": { "description": "Vaga não encontrada" }
+        }
+      }
+    },
+    "/empresas": {
+      "get": {
+        "summary": "Lista todas as empresas",
+        "responses": {
+          "200": {
+            "description": "Lista de empresas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Empresa" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Cria uma nova empresa",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Empresa" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Empresa criada",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Empresa" }
+              }
+            }
+          },
+          "400": { "description": "Erro na requisição" }
+        }
+      }
+    },
+    "/empresas/{id}": {
+      "get": {
+        "summary": "Busca empresa por ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Empresa encontrada",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Empresa" }
+              }
+            }
+          },
+          "404": { "description": "Empresa não encontrada" }
+        }
+      },
+      "put": {
+        "summary": "Atualiza empresa",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Empresa" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Empresa atualizada" },
+          "400": { "description": "Erro na requisição" }
+        }
+      },
+      "delete": {
+        "summary": "Remove empresa",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empresa removida" },
+          "404": { "description": "Empresa não encontrada" }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Usuario": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "nome": { "type": "string" },
+          "email": { "type": "string" },
+          "senha": { "type": "string" },
+          "tipo": { "type": "string", "enum": ["PCD", "empresa"] },
+          "deficiencia": { "type": "string" }
+        },
+        "required": ["nome", "email", "senha", "tipo"]
+      },
+      "Candidatura": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "status": {
+            "type": "string",
+            "enum": ["pendente", "aprovado", "rejeitado"]
+          },
+          "usuarioId": { "type": "integer" },
+          "vagaId": { "type": "integer" }
+        },
+        "required": ["usuarioId", "vagaId"]
+      },
+      "Vaga": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "titulo": { "type": "string" },
+          "descricao": { "type": "string" },
+          "local": { "type": "string" },
+          "salario": { "type": "number" },
+          "empresaId": { "type": "integer" }
+        },
+        "required": ["titulo", "descricao", "local", "salario", "empresaId"]
+      },
+      "Empresa": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "nome": { "type": "string" },
+          "cnpj": { "type": "string" },
+          "endereco": { "type": "string" },
+          "email": { "type": "string", "format": "email" },
+          "telefone": { "type": "string" }
+        },
+        "required": ["nome", "cnpj", "email"]
+      }
+    }
+  }
+}
+
