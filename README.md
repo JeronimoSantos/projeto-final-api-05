@@ -90,9 +90,9 @@ Cada recurso suporta os métodos:
 
 ---
 
-## 👥 Squad de Desenvolvimento
+## 👥 Squad de Desenvolvimento M04
 
-Equipe Squad 5, comprometida com impacto social, acessibilidade e inclusão digital.
+Equipe da Squad 5, comprometida com impacto social, acessibilidade e inclusão digital.
 
 | Nome             | Função              |
 |------------------|---------------------|
@@ -102,11 +102,23 @@ Equipe Squad 5, comprometida com impacto social, acessibilidade e inclusão digi
 | Matheus Henrique Silva Nascimento    | Colaborador/a       |
 | Julia Tito Assunção  | Colaborador/a   | 
 
+## 👥 Squad de Desenvolvimento M05
+
+Equipe da Squad 5, comprometida com impacto social, acessibilidade e inclusão digital.
+
+| Nome             | Função              |
+|------------------|---------------------|
+| Jerônimo Santos Rodrigues  | Líder     |
+| Flaviano Kiffer Teodoro    | Colaborador/a |
+| Jair Bonifacío moreira filho | Colaborador/a |
+| Emilly Santos Silva        | Colaborador/a |
+| Leiliane Nogueira Pinto Cavalcante | Colaborador/a |
+| Maria Eduarda Silva Souza  | Colaborador/a |
 ---
 
 ## 📄 Documentação da API
 
-Para mais detalhes sobre os endpoints, consulte a documentação Swagger disponível em `/docs` (se implementada).
+Para mais detalhes sobre os endpoints, consulte a documentação Swagger disponível em `/api-docs` (se implementada).
 
 ---
 
