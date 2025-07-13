@@ -12,7 +12,9 @@ app.use(corsMiddleware);
 app.use(express.json());
 
 // Roteador principal (agrupa todas as rotas)
-app.use(router);
+app.use('/', router); // em vez de '/api'
+
+
 
 // Rota de saúde da API
 app.get('/', (req, res) => {
