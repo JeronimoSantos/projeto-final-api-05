@@ -3,6 +3,7 @@ import usuarioRoutes from './usuario.route.js';
 import candidaturaRoutes from './candidatura.route.js';
 import empresaRoutes from './empresa.route.js';
 import vagaRoutes from './vaga.route.js';
+import authRoutes from './authRoutes.js';  // <== Importa as rotas auth
 
 const router = express.Router();
 
@@ -10,8 +11,10 @@ router.use('/usuarios', usuarioRoutes);
 router.use('/candidaturas', candidaturaRoutes);
 router.use('/vagas', vagaRoutes);
 router.use('/empresas', empresaRoutes);
+router.use('/auth', authRoutes); // <== Registra as rotas /auth/login e /auth/register
 
 export default router;
+
 // Aqui você pode adicionar outras rotas principais do seu aplicativo
 // Exemplo de rota para listar vagas (precisa de implementação no controller)   
 // app.get('/vagas', (req, res) => {
