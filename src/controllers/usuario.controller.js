@@ -1,5 +1,8 @@
 import { Usuario } from '../models/index.js'; 
 
+console.log('Tipo de Usuario:', typeof Usuario.create); // Deve imprimir "function"
+
+
 // Criar novo usuário
 export const createUsuario = async (req, res) => {
   try {

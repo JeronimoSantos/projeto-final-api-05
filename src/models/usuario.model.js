@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 
-export default (sequelize, DataTypes) => {
+const defineUsuario = (sequelize, DataTypes) => {
   const Usuario = sequelize.define('Usuario', {
     nome: {
       type: DataTypes.STRING,
@@ -62,3 +62,5 @@ export default (sequelize, DataTypes) => {
 
   return Usuario;
 };
+
+export default defineUsuario;
