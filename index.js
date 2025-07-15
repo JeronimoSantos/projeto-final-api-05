@@ -5,7 +5,7 @@ import empresaRoutes from './empresaRoutes.js';
 import vagaRoutes from './vagaRoutes.js';
 import candidaturaRoutes from './candidaturaRoutes.js';
 import acessibilidadeRoutes from './acessibilidadeRoutes.js';
-import authRoutes from './authRoutes.js';
+import authRoutes from './src/routes/authRoutes.js';
 
 const router = Router();
 
