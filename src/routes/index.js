@@ -3,7 +3,7 @@ import usuarioRoutes from './usuario.route.js';
 import candidaturaRoutes from './candidatura.route.js';
 import empresaRoutes from './empresa.route.js';
 import vagaRoutes from './vaga.route.js';
-import authRoutes from './authRoutes.js';  // <== Importa as rotas auth
+import authRoutes from './authRoutes.js';  // Rotas de autenticação
 
 const router = express.Router();
 
@@ -11,7 +11,7 @@ router.use('/usuarios', usuarioRoutes);
 router.use('/candidaturas', candidaturaRoutes);
 router.use('/vagas', vagaRoutes);
 router.use('/empresas', empresaRoutes);
-router.use('/auth', authRoutes); // <== Registra as rotas /auth/login e /auth/register
+router.use('/auth', authRoutes); // Rotas de autenticação (/auth/login, /auth/register)
 
 export default router;
 
